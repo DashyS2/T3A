@@ -1,0 +1,52 @@
+<ion-header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <main class="container">
+        
+        <section class="apresentacao">
+            <div class="imagem-container">
+                <img src="/assets/vini.jpg" alt="Foto aluno" class="logo-ionic">
+            </div>
+            
+            <div class="texto-container">
+                <h2>Vinicius Santos da Silva</h2>
+                <p>Idade: 17</p>
+                <p>O que mais gostava na Escola Silva Paes: O brigadero e os meus amiguinhos</p>
+                <p>Meme interno: "Tu é esperta, abre teu olho"</p>
+                <p>Materia favorita: Quimica </p>
+            </div>
+        </section>
+
+        <section class="texto-longo">
+            <h2>Sobre Vinicius Santos da Silva</h2>
+            <p>"Bem eu sou Vinicius meus amigos me chamam de vini/vivi gosto bastante de jogos como honkai star rail e genshin impact, amo música pop especialmente da taylor swift e da Ariana Grande que são duas das minhas cantoras favoritas, adoro animais especialmente meus gatos( Oscar, Flash e Dedo) e tambémadoro milkshake. Tenho medo de altura e de uma boa parte dos insetos. Odeio azeitona( a última vez que comi vomitei) e não gosto muito de amendoim e algumas verduras( infelizmente)"</p>
+        </section>
+
+    <section class="imagens">
+            <h2 class="ion-text-center">Fotos que definem Vinicius</h2> 
+
+            <ion-grid class="galeria-centralizada">
+                <ion-row> 
+                    <ion-col size="4" *ngFor="let caminho of caminhosDasFotos | slice:0:limiteDeFotos">
+                        
+                        <div class="imagem-pequena-container">
+                            <ion-img [src]="caminho" [alt]="'Foto de Sarah: ' + caminho"></ion-img>
+                        </div>
+                        
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            
+            <ion-button 
+                *ngIf="mostrarBotao" 
+                (click)="mostrarTodasAsFotos()" 
+                expand="block" 
+                fill="outline"
+                class="ion-margin-top galeria-botao-expansao">
+                Mostrar Mais Fotos ({{ caminhosDasFotos.length - limiteDeFotos }})
+            </ion-button>
+        </section>
+    </main>
+</ion-content>

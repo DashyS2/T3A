@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+    <main class="container">
+        <!-- SEÇÃO 1: APRESENTAÇÃO -->
+        <section class="apresentacao">
+            <div class="imagem-container">
+                <img src="/assets/clau.jpeg" alt="Foto aluno" class="logo-ionic">
+            </div>
+
+            <div class="texto-container">
+                <h2>Claudio Luiz</h2>
+                <p>Idade: 17 anos</p>
+                <p>O que mais gostava na Escola Silva Paes: Comer PS:Eu gosto de dormir em aula e conversar com os amiguinhos..amo bolo PS2:Eu amo meus amigos também </p>
+                <p>Meme interno: "Tais queimando um óleo, não entrosa cara"</p>
+                <p>Materia favorita: História </p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: TEXTO LONGO -->
+        <section class="texto-longo">
+            <h2>Sobre Claudio Luiz</h2>
+            <p></p>
+        </section>
+
+        <!-- SEÇÃO 3: GALERIA DE FOTOS -->
+        <section class="imagens">
+            <h2 class="ion-text-center">Fotos que definem Claudio Luiz</h2> 
+
+            <ion-grid class="galeria-centralizada">
+                <ion-row> 
+                    <ion-col size="4" *ngFor="let caminho of caminhosDasFotos | slice:0:limiteDeFotos">
+                        
+                        <div class="imagem-pequena-container">
+                            <ion-img [src]="caminho" [alt]="'Foto de Sarah: ' + caminho"></ion-img>
+                        </div>
+                        
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            
+            <ion-button 
+                *ngIf="mostrarBotao" 
+                (click)="mostrarTodasAsFotos()" 
+                expand="block" 
+                fill="outline"
+                class="ion-margin-top galeria-botao-expansao">
+                Mostrar Mais Fotos ({{ caminhosDasFotos.length - limiteDeFotos }})
+            </ion-button>
+        </section>
+    </main>
+</ion-content>

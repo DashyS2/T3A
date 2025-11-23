@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true">
+    <main class="container">
+        <!-- SEÇÃO 1: APRESENTAÇÃO -->
+        <section class="apresentacao">
+            <div class="imagem-container">
+                <img src="/assets/vitin.jpeg" alt="Foto aluno" class="logo-ionic">
+            </div>
+
+            <div class="texto-container">
+                <h2>Vitor Evander Lima dos Santos</h2>
+                <p>Idade: 18</p>
+                <p>O que mais gostava na Escola Silva Paes: Projetos no técnico </p>
+                <p>Meme interno: "OQUE??? 150 reais???"</p>
+                <p>Materia favorita: Matemática </p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: TEXTO LONGO -->
+        <section class="texto-longo">
+            <h2>Vitor fala sobre Vitor</h2>
+            <p>"✨Olá! Meu nome é Vitor, sou uma pessoa extrovertida, apaixonada por esportes e programação. Tenho o sonho de me formar e me tornar programador, algo que venho buscando com muita dedicação.
+Gosto de conversar, fazer novas amizades e trocar ideias — então, se quiser um amigo, pode falar comigo!"</p>
+        </section>
+
+        <!-- SEÇÃO 3: GALERIA DE FOTOS -->
+        <section class="imagens">
+            <h2 class="ion-text-center">Fotos que a definem</h2> 
+
+            <ion-grid class="galeria-centralizada">
+                <ion-row> 
+                    <ion-col size="4" *ngFor="let caminho of caminhosDasFotos | slice:0:limiteDeFotos">
+                        
+                        <div class="imagem-pequena-container">
+                            <ion-img [src]="caminho" [alt]="'Foto de Vitor: ' + caminho"></ion-img>
+                        </div>
+                        
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            
+            <ion-button 
+                *ngIf="mostrarBotao" 
+                (click)="mostrarTodasAsFotos()" 
+                expand="block" 
+                fill="outline"
+                class="ion-margin-top galeria-botao-expansao">
+                Mostrar Mais Fotos ({{ caminhosDasFotos.length - limiteDeFotos }})
+            </ion-button>
+        </section>
+    </main>
+</ion-content>

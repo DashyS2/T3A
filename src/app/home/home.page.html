@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true" class="home-content">
+
+  <div class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" *ngFor="let p of profiles" class="card-col">
+
+          <div class="profile-card" [routerLink]="p.path">
+            
+            <img [src]="p.photo" alt="Foto" class="profile-photo">
+
+            <h2>{{ p.name }}</h2>
+            <p>{{ p.age }} anos</p>
+
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+</ion-content>

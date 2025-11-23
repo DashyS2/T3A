@@ -1,0 +1,7 @@
+{
+  "name": "T3A",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
